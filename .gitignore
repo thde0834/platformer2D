@@ -23,7 +23,7 @@
 .vs/
 
 # Visual Studio configs
-.vsconfigs
+.vsconfig
 
 # Gradle cache directory
 .gradle/
