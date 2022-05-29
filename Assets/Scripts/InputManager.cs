@@ -1,9 +1,9 @@
-
+using UnityEngine;
 using System.Collections.Generic;
 
 public class InputManager : Manager<InputManager>
 {
-    private PlayerControls playerControls;
+    public PlayerControls playerControls { get; private set; }
     private Dictionary<GameStateEnum, InputMap> inputMaps;
     private InputMap activeInputMap;
 
@@ -21,16 +21,22 @@ public class InputManager : Manager<InputManager>
         }
 
         playerControls = new PlayerControls();
-        playerControls.Keyboard.Enable();
+        playerControls.Enable();
     }
 
     private void InitializeInputMaps()
     {
+        if (inputMaps != null)
+        {
+            throw new System.Exception("Input Map already set!");
+        }
         inputMaps = new Dictionary<GameStateEnum, InputMap>()
         {
-            { GameStateEnum.Play,   new PlayInputMap(playerControls) },
-            { GameStateEnum.Paused, null },
+            { GameStateEnum.Play,   new PlayInputMap(this) },
+            { GameStateEnum.Paused, new PausedInputMap(this) },
         };
+
+        SetActiveInputMap(GameStateEnum.Play);
     }
 
     public void SetActiveInputMap(GameStateEnum enumKey)
@@ -40,6 +46,13 @@ public class InputManager : Manager<InputManager>
             throw new System.Exception("Input Map with key: " + enumKey + " does not exist in dictionary!");
         }
 
+        if (activeInputMap?.gameStateEnum == enumKey)
+        {
+            throw new System.Exception("InputMap with GameStateEnum: " + enumKey + " is already active!");
+        }
+
+        activeInputMap?.onDisable();
         activeInputMap = inputMaps[enumKey];
+        activeInputMap?.onEnable();
     }
 }
