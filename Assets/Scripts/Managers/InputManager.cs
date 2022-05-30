@@ -36,6 +36,7 @@ public class InputManager : Manager<InputManager>
             { GameStateEnum.Paused, new PausedInputMap(this) },
         };
 
+        // change later
         SetActiveInputMap(GameStateEnum.Play);
     }
 
@@ -46,13 +47,13 @@ public class InputManager : Manager<InputManager>
             throw new System.Exception("Input Map with key: " + enumKey + " does not exist in dictionary!");
         }
 
-        if (activeInputMap?.gameStateEnum == enumKey)
+        if (activeInputMap?.GameStateEnum == enumKey)
         {
             throw new System.Exception("InputMap with GameStateEnum: " + enumKey + " is already active!");
         }
 
-        activeInputMap?.onDisable();
+        activeInputMap?.Disable();
         activeInputMap = inputMaps[enumKey];
-        activeInputMap?.onEnable();
+        activeInputMap?.Enable();
     }
 }

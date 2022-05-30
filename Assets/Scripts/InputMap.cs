@@ -8,22 +8,18 @@ public abstract class InputMap : PlayerControls.IControlsActions
 {
     protected InputManager inputManager;
     protected PlayerControls.ControlsActions playerControls;
-
-    public GameStateEnum gameStateEnum { get; private set; }
-
     protected List<Action> unsubscribeList;
+
+    public abstract GameStateEnum GameStateEnum { get; }
 
     public InputMap(InputManager inputManager)
     {
         this.inputManager = inputManager;
         this.playerControls = inputManager.playerControls.Controls;
-        unsubscribeList = SetUnsubscribeList();
-        gameStateEnum = SetGameStateEnum();
+        unsubscribeList = InitializeUnsubscribeList();
     }
 
-    protected virtual List<Action> SetUnsubscribeList() { return null; }
-
-    protected abstract GameStateEnum SetGameStateEnum();
+    protected virtual List<Action> InitializeUnsubscribeList() { return null; }
 
     protected void UnsubscribeActions(List<Action> actions)
     {
@@ -35,13 +31,14 @@ public abstract class InputMap : PlayerControls.IControlsActions
         }
     }
 
-    public virtual void onEnable()
+    public virtual void Enable()
     {
         playerControls.SetCallbacks(this);
         UnsubscribeActions(unsubscribeList);
     }
 
-    public virtual void onDisable() { }
+    public virtual void Disable() { }
+
     public virtual void OnUp(InputAction.CallbackContext context) { }
     public virtual void OnDown(InputAction.CallbackContext context) { }
     public virtual void OnLeft(InputAction.CallbackContext context) { }

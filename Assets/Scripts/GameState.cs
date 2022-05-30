@@ -4,18 +4,17 @@ using UnityEngine;
 
 public abstract class GameState
 {
-    protected InputManager inputManager;
-    protected GameStateEnum gameStateEnum;
+    public abstract GameStateEnum GameStateEnum { get; }
 
-    public GameState(InputManager inputManager)
+    public GameState(GameStateManager gameStateManager)
     {
-        this.inputManager = inputManager;
-        InitializeGameState();
+
     }
 
-    protected abstract void InitializeGameState();
-
-    public virtual void onEnter() { }
+    public virtual void onEnter() 
+    { 
+        InputManager.getInstance.SetActiveInputMap(GameStateEnum);
+    }
 
     public virtual void onExit() { }
 

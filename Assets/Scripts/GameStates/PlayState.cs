@@ -5,25 +5,11 @@ using UnityEngine;
 // allow player to move
 public class PlayState : GameState
 {
-    public PlayState(InputManager inputManager) : base(inputManager)
+    public override GameStateEnum GameStateEnum => GameStateEnum.Play;
+
+    public PlayState(GameStateManager gameStateManager) : base(gameStateManager)
     {
 
     }
 
-    protected override void InitializeGameState()
-    {
-        gameStateEnum = GameStateEnum.Play;
-    }
-
-    // set IM
-    public override void onEnter()
-    {
-        inputManager.SetActiveInputMap(gameStateEnum);
-    }
-
-    // unset IM -- idk if i need to
-    public override void onExit()
-    {
-
-    }
 }

@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public void OnEnable()
-    {
-        // connect IM
-    }
+    private Player instance;
 
-    public void OnDisable()
-    {
-        // disconnect IM
-    }
+
+
 }

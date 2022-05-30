@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayInputMap : InputMap
 {
+    public override GameStateEnum GameStateEnum => GameStateEnum.Play;
+
     public PlayInputMap(InputManager inputManager) : base(inputManager)
     {
         
     }
 
-    protected override List<Action> SetUnsubscribeList()
+    protected override List<Action> InitializeUnsubscribeList()
     {
         var list = new List<Action>()
         {
@@ -38,19 +40,14 @@ public class PlayInputMap : InputMap
         return list;
     }
 
-    protected override GameStateEnum SetGameStateEnum()
+    public override void Enable()
     {
-        return GameStateEnum.Play;
+        base.Enable();
     }
 
-    public override void onEnable()
+    public override void Disable()
     {
-        base.onEnable();
-    }
-
-    public override void onDisable()
-    {
-        base.onDisable();
+        base.Disable();
     }
 
     public override void OnUp(InputAction.CallbackContext context)
@@ -85,7 +82,7 @@ public class PlayInputMap : InputMap
 
     public override void OnEscape(InputAction.CallbackContext context)
     {
-        inputManager.SetActiveInputMap(GameStateEnum.Paused);
+        GameStateManager.getInstance.SetCurrentGameState(GameStateEnum.Paused);
     }
 
     public override void OnInteract(InputAction.CallbackContext context)
