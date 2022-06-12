@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class GameStateManager : Manager<GameStateManager>
 {
-    public GameState currentState { get; private set; }
-    private Dictionary<GameStateEnum, GameState> availableStates;
+    public static GameState currentState { get; private set; }
+    private static Dictionary<GameStateEnum, GameState> availableStates;
 
-    private GameStateManager() : base()
+    public override void Awake()
     {
+        base.Awake();
         InitializeStates();
+    }
+
+    public void Start()
+    {
+        SetCurrentGameState(GameStateEnum.Play);
     }
 
     private void InitializeStates()
@@ -22,12 +28,12 @@ public class GameStateManager : Manager<GameStateManager>
 
         availableStates = new Dictionary<GameStateEnum, GameState>()
         {
-            { GameStateEnum.Play,   new PlayState(this) },
-            { GameStateEnum.Paused, new PausedState(this) }
+            { GameStateEnum.Play,   new PlayState() },
+            { GameStateEnum.Paused, new PausedState() }
         };
     }
 
-    public void SetCurrentGameState(GameStateEnum enumKey)
+    public static void SetCurrentGameState(GameStateEnum enumKey)
     {
         if (availableStates.ContainsKey(enumKey) == false)
         {

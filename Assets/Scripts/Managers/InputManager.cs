@@ -1,19 +1,21 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class InputManager : Manager<InputManager>
 {
-    public PlayerControls playerControls { get; private set; }
-    private Dictionary<GameStateEnum, InputMap> inputMaps;
-    private InputMap activeInputMap;
+    private PlayerControls playerControls;
+    private static PlayerControls.ControlsActions controlsActions;
 
-    private InputManager() : base()
+    private static InputMap CurrentInputMap;
+
+    public override void Awake()
     {
-        InitializeControls();
-        InitializeInputMaps();
+        base.Awake();
+        playerControls = InitializePlayerControls(playerControls);
     }
 
-    private void InitializeControls()
+    private PlayerControls InitializePlayerControls(PlayerControls playerControls)
     {
         if (playerControls != null)
         {
@@ -22,38 +24,23 @@ public class InputManager : Manager<InputManager>
 
         playerControls = new PlayerControls();
         playerControls.Enable();
+        controlsActions = playerControls.Controls;
+
+        return playerControls;
     }
 
-    private void InitializeInputMaps()
+    public static void SetInputMap(InputMap inputMap)
     {
-        if (inputMaps != null)
+        var enumKey = inputMap.GameStateEnum;
+        if (CurrentInputMap?.GameStateEnum == enumKey)
         {
-            throw new System.Exception("Input Map already set!");
+            throw new System.Exception("InputMap with GameStateEnum: " + enumKey + " already set!");
         }
-        inputMaps = new Dictionary<GameStateEnum, InputMap>()
-        {
-            { GameStateEnum.Play,   new PlayInputMap(this) },
-            { GameStateEnum.Paused, new PausedInputMap(this) },
-        };
 
-        // change later
-        SetActiveInputMap(GameStateEnum.Play);
+        CurrentInputMap?.Disable();
+        CurrentInputMap = inputMap;
+        controlsActions.SetCallbacks(inputMap);
+        CurrentInputMap?.Enable();
     }
 
-    public void SetActiveInputMap(GameStateEnum enumKey)
-    {
-        if (!inputMaps.ContainsKey(enumKey))
-        {
-            throw new System.Exception("Input Map with key: " + enumKey + " does not exist in dictionary!");
-        }
-
-        if (activeInputMap?.GameStateEnum == enumKey)
-        {
-            throw new System.Exception("InputMap with GameStateEnum: " + enumKey + " is already active!");
-        }
-
-        activeInputMap?.Disable();
-        activeInputMap = inputMaps[enumKey];
-        activeInputMap?.Enable();
-    }
 }

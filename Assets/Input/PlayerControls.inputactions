@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Spell",
-                    "type": "Button",
-                    "id": "94bf21d2-dcfc-4000-aaef-f1475cb3181e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Escape",
                     "type": "Button",
                     "id": "5255f53c-06e4-4763-88ea-33baebe3742c",
@@ -81,6 +72,60 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "597bd4a2-ddf6-4615-8329-5dc7d893fc73",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Map",
+                    "type": "Button",
+                    "id": "b6b38450-ee96-425d-b6f4-cd1603e8a475",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cast",
+                    "type": "Button",
+                    "id": "94bf21d2-dcfc-4000-aaef-f1475cb3181e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpellUp",
+                    "type": "Button",
+                    "id": "ac1b509f-7aa1-44e3-a3a6-dd8d1f0e6a43",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpellDown",
+                    "type": "Button",
+                    "id": "e1d111c6-da27-4596-b7bc-ec82d9ca0aae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpellLeft",
+                    "type": "Button",
+                    "id": "37e414f9-6533-4a95-b3f2-3a632f9792b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SpellRight",
+                    "type": "Button",
+                    "id": "2aba6648-3f3d-4fd4-b9d0-54520d5d3d4c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -156,17 +201,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a7d789b5-97c0-4c4f-a5c8-775fce6fe942",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Spell",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c1f0427a-86b3-4dea-9941-b98f1c6dfaf9",
                     "path": "<Keyboard>/x",
                     "interactions": "",
@@ -184,6 +218,72 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c08ba2e-5fd5-43f8-8e1e-4c85fe842711",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpellUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96f56f2c-36d4-4bc8-a9ec-09039caddf2c",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpellDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb77e64b-582f-4c5d-be28-54abcb8475fc",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpellLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d2139375-1b05-4746-ad0a-b641c69ceff8",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SpellRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7880db6-5758-4b54-99a4-af0b31df8e8f",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7d789b5-97c0-4c4f-a5c8-775fce6fe942",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Cast",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

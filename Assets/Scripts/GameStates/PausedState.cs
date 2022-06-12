@@ -7,10 +7,6 @@ using UnityEngine;
 public class PausedState : GameState
 {
     public override GameStateEnum GameStateEnum => GameStateEnum.Paused;
-
-    public PausedState(GameStateManager gameStateManager) : base(gameStateManager)
-    {
-
-    }
+    protected override InputMap InputMap => new PausedInputMap();
 
 }

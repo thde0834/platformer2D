@@ -6,10 +6,6 @@ using UnityEngine;
 public class PlayState : GameState
 {
     public override GameStateEnum GameStateEnum => GameStateEnum.Play;
-
-    public PlayState(GameStateManager gameStateManager) : base(gameStateManager)
-    {
-
-    }
+    protected override InputMap InputMap => new PlayInputMap();
 
 }

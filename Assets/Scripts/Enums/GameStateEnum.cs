@@ -1,4 +1,6 @@
 public enum GameStateEnum
 {
-    Play, Paused
+    Start,
+    Play, Paused,
+    Quit
 }

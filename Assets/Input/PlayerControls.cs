@@ -73,15 +73,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Spell"",
-                    ""type"": ""Button"",
-                    ""id"": ""94bf21d2-dcfc-4000-aaef-f1475cb3181e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Escape"",
                     ""type"": ""Button"",
                     ""id"": ""5255f53c-06e4-4763-88ea-33baebe3742c"",
@@ -103,6 +94,60 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""597bd4a2-ddf6-4615-8329-5dc7d893fc73"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Map"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6b38450-ee96-425d-b6f4-cd1603e8a475"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cast"",
+                    ""type"": ""Button"",
+                    ""id"": ""94bf21d2-dcfc-4000-aaef-f1475cb3181e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpellUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""ac1b509f-7aa1-44e3-a3a6-dd8d1f0e6a43"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpellDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1d111c6-da27-4596-b7bc-ec82d9ca0aae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpellLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""37e414f9-6533-4a95-b3f2-3a632f9792b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpellRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""2aba6648-3f3d-4fd4-b9d0-54520d5d3d4c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -178,17 +223,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a7d789b5-97c0-4c4f-a5c8-775fce6fe942"",
-                    ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Spell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c1f0427a-86b3-4dea-9941-b98f1c6dfaf9"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
@@ -206,6 +240,72 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c08ba2e-5fd5-43f8-8e1e-4c85fe842711"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SpellUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96f56f2c-36d4-4bc8-a9ec-09039caddf2c"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SpellDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb77e64b-582f-4c5d-be28-54abcb8475fc"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SpellLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2139375-1b05-4746-ad0a-b641c69ceff8"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SpellRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7880db6-5758-4b54-99a4-af0b31df8e8f"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Map"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7d789b5-97c0-4c4f-a5c8-775fce6fe942"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Cast"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -282,10 +382,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Controls_Left = m_Controls.FindAction("Left", throwIfNotFound: true);
         m_Controls_Right = m_Controls.FindAction("Right", throwIfNotFound: true);
         m_Controls_Jump = m_Controls.FindAction("Jump", throwIfNotFound: true);
-        m_Controls_Spell = m_Controls.FindAction("Spell", throwIfNotFound: true);
         m_Controls_Escape = m_Controls.FindAction("Escape", throwIfNotFound: true);
         m_Controls_Interact = m_Controls.FindAction("Interact", throwIfNotFound: true);
         m_Controls_Cancel = m_Controls.FindAction("Cancel", throwIfNotFound: true);
+        m_Controls_Map = m_Controls.FindAction("Map", throwIfNotFound: true);
+        m_Controls_Cast = m_Controls.FindAction("Cast", throwIfNotFound: true);
+        m_Controls_SpellUp = m_Controls.FindAction("SpellUp", throwIfNotFound: true);
+        m_Controls_SpellDown = m_Controls.FindAction("SpellDown", throwIfNotFound: true);
+        m_Controls_SpellLeft = m_Controls.FindAction("SpellLeft", throwIfNotFound: true);
+        m_Controls_SpellRight = m_Controls.FindAction("SpellRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -350,10 +455,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Controls_Left;
     private readonly InputAction m_Controls_Right;
     private readonly InputAction m_Controls_Jump;
-    private readonly InputAction m_Controls_Spell;
     private readonly InputAction m_Controls_Escape;
     private readonly InputAction m_Controls_Interact;
     private readonly InputAction m_Controls_Cancel;
+    private readonly InputAction m_Controls_Map;
+    private readonly InputAction m_Controls_Cast;
+    private readonly InputAction m_Controls_SpellUp;
+    private readonly InputAction m_Controls_SpellDown;
+    private readonly InputAction m_Controls_SpellLeft;
+    private readonly InputAction m_Controls_SpellRight;
     public struct ControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -363,10 +473,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Left => m_Wrapper.m_Controls_Left;
         public InputAction @Right => m_Wrapper.m_Controls_Right;
         public InputAction @Jump => m_Wrapper.m_Controls_Jump;
-        public InputAction @Spell => m_Wrapper.m_Controls_Spell;
         public InputAction @Escape => m_Wrapper.m_Controls_Escape;
         public InputAction @Interact => m_Wrapper.m_Controls_Interact;
         public InputAction @Cancel => m_Wrapper.m_Controls_Cancel;
+        public InputAction @Map => m_Wrapper.m_Controls_Map;
+        public InputAction @Cast => m_Wrapper.m_Controls_Cast;
+        public InputAction @SpellUp => m_Wrapper.m_Controls_SpellUp;
+        public InputAction @SpellDown => m_Wrapper.m_Controls_SpellDown;
+        public InputAction @SpellLeft => m_Wrapper.m_Controls_SpellLeft;
+        public InputAction @SpellRight => m_Wrapper.m_Controls_SpellRight;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -391,9 +506,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnJump;
-                @Spell.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpell;
-                @Spell.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpell;
-                @Spell.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpell;
                 @Escape.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnEscape;
                 @Escape.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnEscape;
                 @Escape.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnEscape;
@@ -403,6 +515,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Cancel.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnCancel;
                 @Cancel.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnCancel;
                 @Cancel.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnCancel;
+                @Map.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnMap;
+                @Map.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnMap;
+                @Map.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnMap;
+                @Cast.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnCast;
+                @Cast.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnCast;
+                @Cast.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnCast;
+                @SpellUp.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellUp;
+                @SpellUp.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellUp;
+                @SpellUp.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellUp;
+                @SpellDown.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellDown;
+                @SpellDown.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellDown;
+                @SpellDown.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellDown;
+                @SpellLeft.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellLeft;
+                @SpellLeft.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellLeft;
+                @SpellLeft.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellLeft;
+                @SpellRight.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellRight;
+                @SpellRight.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellRight;
+                @SpellRight.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSpellRight;
             }
             m_Wrapper.m_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -422,9 +552,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Spell.started += instance.OnSpell;
-                @Spell.performed += instance.OnSpell;
-                @Spell.canceled += instance.OnSpell;
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
@@ -434,6 +561,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
+                @Map.started += instance.OnMap;
+                @Map.performed += instance.OnMap;
+                @Map.canceled += instance.OnMap;
+                @Cast.started += instance.OnCast;
+                @Cast.performed += instance.OnCast;
+                @Cast.canceled += instance.OnCast;
+                @SpellUp.started += instance.OnSpellUp;
+                @SpellUp.performed += instance.OnSpellUp;
+                @SpellUp.canceled += instance.OnSpellUp;
+                @SpellDown.started += instance.OnSpellDown;
+                @SpellDown.performed += instance.OnSpellDown;
+                @SpellDown.canceled += instance.OnSpellDown;
+                @SpellLeft.started += instance.OnSpellLeft;
+                @SpellLeft.performed += instance.OnSpellLeft;
+                @SpellLeft.canceled += instance.OnSpellLeft;
+                @SpellRight.started += instance.OnSpellRight;
+                @SpellRight.performed += instance.OnSpellRight;
+                @SpellRight.canceled += instance.OnSpellRight;
             }
         }
     }
@@ -490,9 +635,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnSpell(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
+        void OnCast(InputAction.CallbackContext context);
+        void OnSpellUp(InputAction.CallbackContext context);
+        void OnSpellDown(InputAction.CallbackContext context);
+        void OnSpellLeft(InputAction.CallbackContext context);
+        void OnSpellRight(InputAction.CallbackContext context);
     }
 }
