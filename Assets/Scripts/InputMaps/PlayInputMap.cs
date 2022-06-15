@@ -4,7 +4,13 @@ using UnityEngine.InputSystem;
 public class PlayInputMap : InputMap
 {
     public override GameStateEnum GameStateEnum => GameStateEnum.Play;
-    private PlayerController PlayerController = PlayerController.Instance;
+    //private PlayerController PlayerController = PlayerController.Instance;
+    private EntityState CurrentPlayerState;
+
+    public override void Enable()
+    {
+        this.CurrentPlayerState = PlayerController.Instance.EntityStateMachine.CurrentState;
+    }
 
     public override void OnUp(InputAction.CallbackContext context)
     {
@@ -17,6 +23,7 @@ public class PlayInputMap : InputMap
                 }
             case InputActionPhase.Performed:
                 {
+                    //PlayerController.PlayerStateMachine.CurrentState.OnUp();
                     break;
                 }
             case InputActionPhase.Canceled:
@@ -190,14 +197,14 @@ public class PlayInputMap : InputMap
 
     }
 
+    // COME BACK TO THIS WHEN WORKING ON CASTING - unsub to started or performed?
     public override void OnCast(InputAction.CallbackContext context)
     {
         switch (context.phase)
         {
             case InputActionPhase.Started:
                 {
-                    context.action.started -= OnCast;
-                    return;
+                    break;
                 }
             case InputActionPhase.Performed:
                 {

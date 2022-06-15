@@ -19,7 +19,7 @@ public class InputManager : Manager<InputManager>
     {
         if (playerControls != null)
         {
-            throw new System.Exception("Controls already set!");
+            throw new System.Exception("PlayerControls already set!");
         }
 
         playerControls = new PlayerControls();
@@ -34,13 +34,13 @@ public class InputManager : Manager<InputManager>
         var enumKey = inputMap.GameStateEnum;
         if (CurrentInputMap?.GameStateEnum == enumKey)
         {
-            throw new System.Exception("InputMap with GameStateEnum: " + enumKey + " already set!");
+            throw new System.Exception($"InputMap with GameStateEnum: {enumKey} already set!");
         }
 
         CurrentInputMap?.Disable();
         CurrentInputMap = inputMap;
-        controlsActions.SetCallbacks(inputMap);
-        CurrentInputMap?.Enable();
+        controlsActions.SetCallbacks(CurrentInputMap);
+        CurrentInputMap.Enable();
     }
 
 }
