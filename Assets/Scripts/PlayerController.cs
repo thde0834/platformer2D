@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using UnityEngine.InputSystem;
+using UnityEngine;
 
 [System.Serializable]
-public class PlayerController : EntityController
-{
-    // how is a player controller different from an AI controller??
+public class PlayerController : MonoBehaviour
+{ 
 
 }
-
+    

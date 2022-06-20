@@ -1,39 +1,26 @@
+using System.Collections;
 using UnityEngine;
 
-public abstract class CollisionHandler : MonoBehaviour
+public class CollisionHandler : MonoBehaviour
 {
-    protected enum CollisionEvent
-    {
-        Enter, Exit
-    }
-
-    public LayerMask[] LayerMasks;
+    [SerializeField] private CollisionDetector[] CollisionDetectors;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var layer = collision.gameObject.layer;
-        foreach(var layerMask in LayerMasks)
+        foreach(var detector in CollisionDetectors)
         {
-            if (layerMask == (layerMask | (1 << layer)))
-            {
-                OnCollisionEvent(CollisionEvent.Enter, layer);
-                return;
-            }
+            detector.OnTriggerEnter2D(collision);
         }
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        var layer = collision.gameObject.layer;
-        foreach (var layerMask in LayerMasks)
+        foreach (var detector in CollisionDetectors)
         {
-            if (layerMask == (layerMask | (1 << layer)))
-            {
-                OnCollisionEvent(CollisionEvent.Exit, layer);
-                return;
-            }
+            detector.OnTriggerExit2D(collision);
         }
     }
-
-    protected abstract void OnCollisionEvent(CollisionEvent context, int layer);
 }
+
+
+

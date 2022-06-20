@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97793f3fc041464aaf9ae98cd30c3f2, type: 3}
+  m_Name: GroundedState
+  m_EditorClassIdentifier: 
+  Transitions:
+  - Event: {fileID: 11400000, guid: 3b8441fa6553d224d823f5c914e858fc, type: 2}
+    TransitionToState: {fileID: 11400000, guid: 10baea66572e3b14c9747b516d00ae03, type: 2}
