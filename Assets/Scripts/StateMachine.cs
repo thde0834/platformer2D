@@ -12,16 +12,6 @@ public class StateMachine : MonoBehaviour
     private void Awake()
     {
         InitializeStateMachine(PlayerStates);
-
-        // for now
-        if (currentState != null)
-        {
-            SetCurrentState(currentState);
-        }
-        else
-        {
-            SetCurrentState(PlayerStates[1]);
-        }
     }
 
     private void InitializeStateMachine(EntityState[] states)
@@ -32,6 +22,17 @@ public class StateMachine : MonoBehaviour
         {
             AddState(state);
         }
+
+        // for now
+        if (currentState != null)
+        {
+            currentState.OnEnter();
+        }
+        else
+        {
+            currentState = PlayerStates[1];
+            currentState.OnEnter();
+        }
     }
 
     public void SetCurrentState(EntityState state)
@@ -39,9 +40,11 @@ public class StateMachine : MonoBehaviour
         if (currentState?.Equals(state) == true)
         {
             throw new System.Exception($"{gameObject} [this] CurrentState: {currentState} is already set to {state}!");
+            //Debug.Log($"{gameObject} [this] CurrentState: {currentState} is already set to {state}!");
+
         }
 
-        currentState?.OnExit();
+        currentState.OnExit();
         currentState = stateDictionary[state.ToString()];
         currentState.OnEnter();
     }
@@ -54,7 +57,7 @@ public class StateMachine : MonoBehaviour
             throw new System.Exception($"{gameObject} [{this}] State with Type: {stateType} already exists in the StateMachine!");
         }
 
-        state.Initialize(this);
+        state.InitializeState(this);
         stateDictionary.Add(stateType, state);
     }
 }

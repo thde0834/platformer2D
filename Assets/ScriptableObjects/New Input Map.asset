@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e97793f3fc041464aaf9ae98cd30c3f2, type: 3}
-  m_Name: GroundedState
+  m_Script: {fileID: 11500000, guid: d9a488449773d5c43940f589ded3db53, type: 3}
+  m_Name: New Input Map
   m_EditorClassIdentifier: 
-  Transitions:
-  - Event: {fileID: 11400000, guid: 3b8441fa6553d224d823f5c914e858fc, type: 2}
-    TransitionToState: {fileID: 11400000, guid: 10baea66572e3b14c9747b516d00ae03, type: 2}

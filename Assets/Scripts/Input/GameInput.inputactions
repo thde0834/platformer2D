@@ -6,7 +6,7 @@
             "id": "2173739d-a479-4a90-888b-9fef8e45b98e",
             "actions": [
                 {
-                    "name": "UpDown",
+                    "name": "Look",
                     "type": "Value",
                     "id": "c105e066-4304-4a11-b9cc-47ce42de631b",
                     "expectedControlType": "Axis",
@@ -15,18 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Left",
-                    "type": "Button",
-                    "id": "98e78481-2a2f-4cde-a7d6-1ea7aa7e4900",
-                    "expectedControlType": "Button",
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "03889709-e90c-4179-9a45-3463d74e07f7",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "Right",
+                    "name": "Dash",
                     "type": "Button",
-                    "id": "a765a4f3-02f4-43f5-8d46-7133d930d4cc",
+                    "id": "015b3534-e4db-4d9b-9e25-ea9466873c30",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -36,15 +36,6 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "cf7f227e-52a9-4db4-b1b0-4b8c7cd1c019",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Escape",
-                    "type": "Button",
-                    "id": "5255f53c-06e4-4763-88ea-33baebe3742c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -63,6 +54,15 @@
                     "name": "Map",
                     "type": "Button",
                     "id": "b6b38450-ee96-425d-b6f4-cd1603e8a475",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "5255f53c-06e4-4763-88ea-33baebe3742c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -112,51 +112,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "LeftRight",
-                    "type": "Value",
-                    "id": "03889709-e90c-4179-9a45-3463d74e07f7",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "61044877-0942-4078-a87f-1340944e39bc",
-                    "path": "<Keyboard>/Escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Escape",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6f17c698-09d7-4922-87c0-c792fa7263b4",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Left",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3b7e2e06-762a-46a0-8302-00d74eeb4341",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Right",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "61f8b5fb-1476-428f-821a-9fa92c0b5dc4",
@@ -252,7 +210,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UpDown",
+                    "action": "Look",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -263,7 +221,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "UpDown",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -274,7 +232,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "UpDown",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -285,7 +243,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftRight",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -296,7 +254,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "LeftRight",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -307,9 +265,31 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "LeftRight",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "af9d876e-16a8-4136-bce7-10341bf27932",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61044877-0942-4078-a87f-1340944e39bc",
+                    "path": "<Keyboard>/Escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

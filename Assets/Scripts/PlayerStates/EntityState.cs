@@ -3,37 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "EntityStates/EntityState")]
+[CreateAssetMenu]
 public class EntityState : ScriptableObject
 {
-    [SerializeField] private Transition[] Transitions;
-    private List<Transition> transitionsList;
-    
+    [SerializeField] 
+    private Transition[] Transitions;
+    private List<Transition> transitionList;
+
+    [SerializeField]
+    private EntityAction[] EntityActions;
+    private List<EntityAction> entityActionList;
+
     private StateMachine parentStateMachine;
 
     private void OnEnable()
     {
-        transitionsList = new List<Transition>();
-
-        if (Transitions?.Count() != 0)
+        transitionList = new List<Transition>();
+        
+        foreach (var transition in Transitions)
         {
-            foreach (var transition in Transitions)
+            transition.InitializeTransition(this);
+            transitionList.Add(transition);
+        }
+
+        entityActionList = new List<EntityAction>();
+
+        if (EntityActions != null)
+        {
+            foreach (var entityAction in EntityActions)
             {
-                transitionsList.Add(transition);
+                entityAction.InitializeAction(this);
+                entityActionList.Add(entityAction);
             }
         }
+        
     }
 
     private void OnDisable()
     {
-        transitionsList.Clear();
+        transitionList = null;
+        entityActionList = null;
     }
 
-    public void Initialize(StateMachine stateMachine) => parentStateMachine = stateMachine;
+    public void InitializeState(StateMachine stateMachine) => parentStateMachine = stateMachine;
     
     public void OnEnter()
     {
-        foreach (var transition in Transitions)
+        foreach (var transition in transitionList)
         {
             transition.OnActivateState();
         }
@@ -41,7 +57,7 @@ public class EntityState : ScriptableObject
 
     public void OnExit()
     {
-        foreach (var transition in Transitions)
+        foreach (var transition in transitionList)
         {
             transition.OnDeactivateState();
         }
