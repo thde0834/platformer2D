@@ -64,7 +64,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""2d0e573b-3b6a-4027-922b-a7fbd0c483ac"",
                     ""expectedControlType"": ""Button"",
@@ -82,7 +82,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Escape"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""5255f53c-06e4-4763-88ea-33baebe3742c"",
                     ""expectedControlType"": ""Button"",
@@ -155,7 +155,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Interact"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -309,7 +309,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Escape"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -545,9 +545,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Map = m_Gameplay.FindAction("Map", throwIfNotFound: true);
-        m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         m_Gameplay_Cast = m_Gameplay.FindAction("Cast", throwIfNotFound: true);
         m_Gameplay_SpellUp = m_Gameplay.FindAction("SpellUp", throwIfNotFound: true);
         m_Gameplay_SpellDown = m_Gameplay.FindAction("SpellDown", throwIfNotFound: true);
@@ -625,9 +625,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Dash;
     private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Map;
-    private readonly InputAction m_Gameplay_Escape;
+    private readonly InputAction m_Gameplay_Pause;
     private readonly InputAction m_Gameplay_Cast;
     private readonly InputAction m_Gameplay_SpellUp;
     private readonly InputAction m_Gameplay_SpellDown;
@@ -641,9 +641,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputAction @Map => m_Wrapper.m_Gameplay_Map;
-        public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputAction @Cast => m_Wrapper.m_Gameplay_Cast;
         public InputAction @SpellUp => m_Wrapper.m_Gameplay_SpellUp;
         public InputAction @SpellDown => m_Wrapper.m_Gameplay_SpellDown;
@@ -670,15 +670,15 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Interact.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
-                @Interact.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
-                @Interact.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                @Attack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
                 @Map.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMap;
                 @Map.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMap;
                 @Map.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMap;
-                @Escape.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEscape;
-                @Escape.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEscape;
-                @Escape.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnEscape;
+                @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Cast.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCast;
                 @Cast.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCast;
                 @Cast.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCast;
@@ -710,15 +710,15 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
                 @Map.started += instance.OnMap;
                 @Map.performed += instance.OnMap;
                 @Map.canceled += instance.OnMap;
-                @Escape.started += instance.OnEscape;
-                @Escape.performed += instance.OnEscape;
-                @Escape.canceled += instance.OnEscape;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
                 @Cast.started += instance.OnCast;
                 @Cast.performed += instance.OnCast;
                 @Cast.canceled += instance.OnCast;
@@ -879,9 +879,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
-        void OnEscape(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
         void OnCast(InputAction.CallbackContext context);
         void OnSpellUp(InputAction.CallbackContext context);
         void OnSpellDown(InputAction.CallbackContext context);

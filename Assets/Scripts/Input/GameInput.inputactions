@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "2d0e573b-3b6a-4027-922b-a7fbd0c483ac",
                     "expectedControlType": "Button",
@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Escape",
+                    "name": "Pause",
                     "type": "Button",
                     "id": "5255f53c-06e4-4763-88ea-33baebe3742c",
                     "expectedControlType": "Button",
@@ -133,7 +133,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Interact",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -287,7 +287,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Escape",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
