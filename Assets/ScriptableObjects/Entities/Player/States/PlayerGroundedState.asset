@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc36b5715d7c4d6408013cd577368b84, type: 3}
   m_Name: PlayerGroundedState
   m_EditorClassIdentifier: 
-  transitionListeners: []
+  transitionListeners:
+  - {fileID: 11400000, guid: 95ad41a62716e07469eec23cfae845de, type: 2}
+  entityActions: []

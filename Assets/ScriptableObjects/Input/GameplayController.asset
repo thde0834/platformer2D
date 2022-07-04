@@ -12,3 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a429e82546f9702439a65f171e1fa72d, type: 3}
   m_Name: GameplayController
   m_EditorClassIdentifier: 
+  LookEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 999ecd8492f39204eb333a8e406d57e5, type: 2}
+        m_TargetAssemblyTypeName: BaseGameEvent`1[[System.Single, mscorlib
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MoveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DashEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  JumpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AttackEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  MapEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PauseEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CastEvent:
+    m_PersistentCalls:
+      m_Calls: []

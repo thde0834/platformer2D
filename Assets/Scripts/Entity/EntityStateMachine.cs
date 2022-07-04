@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Entity/EntityStateMachine")]
+[CreateAssetMenu(menuName = "Entity/StateMachine")]
 public class EntityStateMachine : ScriptableObject
 {
-    [SerializeField] private EntityState[] PlayerStates;
+    [SerializeField]
+    private List<EntityState> playerStates;
+
     private Dictionary<Type, EntityState> stateDictionary;
 
     [field: SerializeField] public EntityState CurrentState { get; private set; }
@@ -14,7 +16,7 @@ public class EntityStateMachine : ScriptableObject
     {
         stateDictionary = new Dictionary<Type, EntityState>();
 
-        foreach (var state in PlayerStates)
+        foreach (var state in playerStates)
         {
             AddState(state);
         }

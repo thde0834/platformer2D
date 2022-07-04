@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b4f685fd5c3c74c9cf07a48c783da3, type: 3}
   m_Name: PlayerStateMachine
   m_EditorClassIdentifier: 
-  PlayerStates: []
+  playerStates:
+  - {fileID: 11400000, guid: 0eef5eb019eea4641842e33bab93ee01, type: 2}
+  - {fileID: 11400000, guid: 760a6cc453b369c4290ce4e035062c7e, type: 2}
   <CurrentState>k__BackingField: {fileID: 0}

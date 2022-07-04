@@ -1,25 +1,26 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
-public abstract class BaseGameEvent   // Unity doesn't support interfaces in inspector 
+public abstract class BaseGameEventSO : ScriptableObject
 {
     public abstract void Raise(object input);
 }
 
-public abstract class BaseGameEvent<T> : BaseGameEvent
+public abstract class BaseGameEventSO<T> : BaseGameEventSO
 {
-    private readonly List<BaseGameEventListener<T>> eventListeners = new List<BaseGameEventListener<T>>();
+    private readonly List<BaseGameEventListenerSO<T>> eventListeners = new List<BaseGameEventListenerSO<T>>();
+    
     public override void Raise(object input) { Raise((T)input); }
-
     public void Raise(T item)
     {
-        for (int i = eventListeners.Count - 1; i >= 0; i--)
+        for(int i = eventListeners.Count - 1; i >= 0; i--)
         {
             eventListeners[i].OnEventRaised(item);
         }
     }
 
-    public void RegisterListener(BaseGameEventListener<T> listener)
+    public void RegisterListener(BaseGameEventListenerSO<T> listener)
     {
         if (!eventListeners.Contains(listener))
         {
@@ -27,7 +28,7 @@ public abstract class BaseGameEvent<T> : BaseGameEvent
         }
     }
 
-    public void UnregisterListener(BaseGameEventListener<T> listener)
+    public void UnregisterListener(BaseGameEventListenerSO<T> listener)
     {
         if (eventListeners.Contains(listener))
         {

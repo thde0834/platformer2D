@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074cc027f56b4544abd43ba7c69e6ad7, type: 3}
-  m_Name: PlayerPlatformExitListener
+  m_Script: {fileID: 11500000, guid: 8b40bca33842dae478dda4476edbf52f, type: 3}
+  m_Name: New Void Entity Action
   m_EditorClassIdentifier: 
-  <GameEvent>k__BackingField: {fileID: 0}
-  <UnityEventResponse>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []

@@ -5,5 +5,6 @@ using UnityEngine;
 public class EntityController : MonoBehaviour
 {
     [SerializeField] private EntityStateMachine stateMachine;
-
+    
+    
 }

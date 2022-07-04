@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: InputManager
   m_EditorClassIdentifier: 
   actionMapControllers:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6b5aa65342f756c40b435562c7cb829c, type: 2}

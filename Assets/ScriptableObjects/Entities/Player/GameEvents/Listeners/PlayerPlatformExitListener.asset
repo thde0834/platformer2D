@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 074cc027f56b4544abd43ba7c69e6ad7, type: 3}
-  m_Name: PlayerPlatformEnterListener
+  m_Name: PlayerPlatformExitListener
   m_EditorClassIdentifier: 
-  <GameEvent>k__BackingField: {fileID: 11400000, guid: e53e6c4eb92d2274d85abf395777a8e1, type: 2}
+  <GameEvent>k__BackingField: {fileID: 11400000, guid: dd0398d66bb65d34783799c08fab01db, type: 2}
   <UnityEventResponse>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0eef5eb019eea4641842e33bab93ee01, type: 2}
+      - m_Target: {fileID: 11400000, guid: 760a6cc453b369c4290ce4e035062c7e, type: 2}
         m_TargetAssemblyTypeName: EntityState, Assembly-CSharp
         m_MethodName: ActivateState
         m_Mode: 1

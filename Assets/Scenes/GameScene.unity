@@ -298,7 +298,6 @@ GameObject:
   m_Component:
   - component: {fileID: 783211762}
   - component: {fileID: 783211763}
-  - component: {fileID: 783211764}
   - component: {fileID: 783211766}
   - component: {fileID: 783211765}
   m_Layer: 0
@@ -336,25 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19b572aa876fc94dad1daf80b2074c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateMachine: {fileID: 0}
-  rb: {fileID: 0}
-  inputReader: {fileID: 11400000, guid: 0e6642ee3fb108a4eb730fbf41965b70, type: 2}
---- !u!114 &783211764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783211761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b4f685fd5c3c74c9cf07a48c783da3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerStates:
-  - {fileID: 11400000, guid: 0eef5eb019eea4641842e33bab93ee01, type: 2}
-  - {fileID: 11400000, guid: 760a6cc453b369c4290ce4e035062c7e, type: 2}
-  <CurrentState>k__BackingField: {fileID: 0}
+  stateMachine: {fileID: 11400000, guid: c92d8c6cb91c0b64daea8f9499f43824, type: 2}
 --- !u!61 &783211765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -562,8 +543,8 @@ MonoBehaviour:
     OnCollisionEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: d9360525bf826c8419a8976141ebd9ed, type: 2}
-          m_TargetAssemblyTypeName: GameEvent`1[[Transition, Assembly-CSharp
+        - m_Target: {fileID: 11400000, guid: e53e6c4eb92d2274d85abf395777a8e1, type: 2}
+          m_TargetAssemblyTypeName: VoidEvent, Assembly-CSharp
           m_MethodName: Raise
           m_Mode: 1
           m_Arguments:
@@ -577,8 +558,8 @@ MonoBehaviour:
     OnCollisionExit:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 3b8441fa6553d224d823f5c914e858fc, type: 2}
-          m_TargetAssemblyTypeName: GameEvent`1[[Transition, Assembly-CSharp
+        - m_Target: {fileID: 11400000, guid: dd0398d66bb65d34783799c08fab01db, type: 2}
+          m_TargetAssemblyTypeName: VoidEvent, Assembly-CSharp
           m_MethodName: Raise
           m_Mode: 1
           m_Arguments:

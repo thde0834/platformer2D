@@ -1,27 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public abstract class BaseGameEventListener<T, E, UER> : ScriptableObject,
-    IGameEventListener<T> where E : BaseGameEvent<T> where UER : UnityEvent<T>
+public abstract class BaseGameEventListener
 {
-    [field: SerializeField] public E GameEvent { get; protected set; }
+    public abstract void OnEventRaised(object item);
+}
 
-    [field: SerializeField] public UER UnityEventResponse { get; protected set; }
+public abstract class BaseGameEventListener<T> : BaseGameEventListener
+{
+    public override void OnEventRaised(object item) => OnEventRaised((T) item);
+    public abstract void OnEventRaised(T item);
 
-    private void OnEnable()
-    {
-        GameEvent.RegisterListener(this);
-    }
-
-    private void OnDisable()
-    {
-        GameEvent.UnregisterListener(this);
-    }
-
-    public void OnEventRaised(T item)
-    {
-        UnityEventResponse.Invoke(item);
-    }
 }
