@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Input/Input Manager")]
 public class InputManager : ScriptableObject
@@ -9,7 +8,7 @@ public class InputManager : ScriptableObject
     private GameInput gameInput;
     private ActionMapController activeMapController;
 
-    [SerializeField] private ActionMapController[] actionMapControllers;
+    [SerializeField] private List<ActionMapController> actionMapControllers;
     private Dictionary<Type, ActionMapController> controllerDictionary;
 
     private void OnEnable()
@@ -17,12 +16,13 @@ public class InputManager : ScriptableObject
         gameInput = new GameInput();
 
         controllerDictionary = new Dictionary<Type, ActionMapController>();
-        foreach(var actionMap in actionMapControllers)
+        actionMapControllers.ForEach((actionMap) =>
         {
             actionMap.InitializeController(gameInput);
             controllerDictionary.Add(actionMap.GetType(), actionMap);
-        }
+        });
 
+        // for now -- will create script that initializes game (set input, player state, etc.) later on (maybe idk)
         activeMapController = SetInitialMapController(typeof(GameplayController));
     }
 

@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 11400000, guid: c92d8c6cb91c0b64daea8f9499f43824, type: 2}
+  inputManager: {fileID: 11400000, guid: 0e6642ee3fb108a4eb730fbf41965b70, type: 2}
 --- !u!61 &783211765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -519,7 +520,7 @@ Transform:
   m_GameObject: {fileID: 2031825813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 783211762}
   m_RootOrder: 1

@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(fileName = "Gameplay Controller", menuName = "Input/Controllers/Gameplay Controller")]
+[CreateAssetMenu(fileName = "Gameplay Controller", menuName = "Input/Controllers/Gameplay")]
 public class GameplayController : ActionMapController, GameInput.IGameplayActions
 {
     private GameInput.GameplayActions gameplayActions;
@@ -15,36 +16,42 @@ public class GameplayController : ActionMapController, GameInput.IGameplayAction
     }
 
 
-    // use custom events 
+    //[field: Space] // spacing in inspector window
+    [Header("Gameplay Input Events")]
+    [field: SerializeField] private InputActionEventDictionary LookEvent;
     [Space]
-    public UnityFloatEvent LookEvent = new UnityFloatEvent();
-    public UnityFloatEvent MoveEvent = new UnityFloatEvent();
-    public UnityEvent DashEvent = new UnityEvent();
-    public UnityEvent JumpEvent = new UnityEvent();
-    public UnityEvent AttackEvent = new UnityEvent();
-    public UnityEvent MapEvent = new UnityEvent();
-    public UnityEvent PauseEvent = new UnityEvent();
-    public UnityEvent CastEvent = new UnityEvent();
-
+    [field: SerializeField] private InputActionEventDictionary MoveEvent;
+    [Space]
+    [field: SerializeField] private InputActionEventDictionary DashEvent;
+    [Space]
+    [field: SerializeField] private InputActionEventDictionary JumpEvent;
+    [Space]
+    [field: SerializeField] private InputActionEventDictionary AttackEvent;
+    [Space]
+    [field: SerializeField] private InputActionEventDictionary MapEvent;
+    [Space]
+    [field: SerializeField] private InputActionEventDictionary PauseEvent;
+    [Space]
+    [field: SerializeField] private InputActionEventDictionary CastEvent;
 
     public override void Enable() => gameplayActions.Enable();
     public override void Disable() => gameplayActions.Disable();
 
-    public void OnLook(InputAction.CallbackContext context) => LookEvent.Invoke(context.ReadValue<float>());
+    public void OnLook(InputAction.CallbackContext context) => LookEvent[context.phase].Invoke(context.action);
 
-    public void OnMove(InputAction.CallbackContext context) => MoveEvent.Invoke(context.ReadValue<float>());
+    public void OnMove(InputAction.CallbackContext context) => MoveEvent[context.phase]?.Invoke(context.action);
 
-    public void OnDash(InputAction.CallbackContext context) => DashEvent.Invoke();
+    public void OnDash(InputAction.CallbackContext context) => DashEvent[context.phase].Invoke(context.action);
 
-    public void OnJump(InputAction.CallbackContext context) => JumpEvent.Invoke();
+    public void OnJump(InputAction.CallbackContext context) => JumpEvent[context.phase].Invoke(context.action);
 
-    public void OnAttack(InputAction.CallbackContext context) => AttackEvent.Invoke();
+    public void OnAttack(InputAction.CallbackContext context) => AttackEvent[context.phase].Invoke(context.action);
 
-    public void OnMap(InputAction.CallbackContext context) => MapEvent.Invoke();
+    public void OnMap(InputAction.CallbackContext context) => MapEvent[context.phase].Invoke(context.action);
 
-    public void OnPause(InputAction.CallbackContext context) => PauseEvent.Invoke();
+    public void OnPause(InputAction.CallbackContext context) => PauseEvent[context.phase].Invoke(context.action);
 
-    public void OnCast(InputAction.CallbackContext context) => CastEvent.Invoke();
+    public void OnCast(InputAction.CallbackContext context) => CastEvent[context.phase].Invoke(context.action);
 
     public void OnSpellUp(InputAction.CallbackContext context)
     {

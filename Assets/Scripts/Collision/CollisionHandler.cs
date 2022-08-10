@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] private CollisionDetector[] CollisionDetectors;

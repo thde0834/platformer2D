@@ -15,11 +15,7 @@ public class EntityStateMachine : ScriptableObject
     private void OnEnable()
     {
         stateDictionary = new Dictionary<Type, EntityState>();
-
-        foreach (var state in playerStates)
-        {
-            AddState(state);
-        }
+        playerStates.ForEach((state) => AddState(state));
 
         // for now
         CurrentState = stateDictionary[typeof(AerialState)];
