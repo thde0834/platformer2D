@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a017dee4443274b856d164b619f2b4, type: 3}
+  m_Name: PlayerGrounded
+  m_EditorClassIdentifier: 
+  <Transitions>k__BackingField:
+  - {fileID: 11400000, guid: 1eac671660c85b444bd00a96a353068d, type: 2}
