@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +34,7 @@ public class StateMachine : ScriptableObject
             States.Add(state);
         }
     }
+
     public void RemoveState(BaseState state)
     {
         if (GetState(state.GetType()) != default)
@@ -42,5 +42,4 @@ public class StateMachine : ScriptableObject
             States.Remove(state);
         }
     }
-
 }
